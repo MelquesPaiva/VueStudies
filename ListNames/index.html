@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>VueJs</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+</head>
+
+<body>
+    <header class="py-5 text-center container">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <h1 class="fw-light">VueJs Estudos - Lista de Nomes</h1>
+            </div>
+        </div>
+    </header>
+    <section id="main" class="container">
+        <div class="row mb-3">
+            <div class="col-12 mb-3">
+                <form v-on:submit.prevent="submit" autocomplete="off">
+                    <label for="name" class="form-label">Digite o Nome</label>
+                    <input class="form-control" id="name" v-model="name" />
+                    <span class="fw-light">{{ typing }}</span>
+                    <button type="submit" class="btn btn-primary btn-sm my-2" v-if="allowSubmit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <h4 class="fw-light">Lista de Nomes</h4>
+                <ul v-if="nameList.length > 0" class="list-group list-group-flush">
+                    <li class="list-group-item" v-for="name in nameList">{{ name }}</li>
+                </ul>
+                <h5 class="fw-light">Total: {{ amountNames }}</h5>
+            </div>
+        </div>
+    </section>
+
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="public/js/app/index.js"></script>
+</body>
+
+</html>

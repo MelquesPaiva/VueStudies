@@ -1,0 +1,5 @@
+### FOLDER TO IGNORE ###
+node_modules
+
+### FILES TO IGNORE ###
+*lock
