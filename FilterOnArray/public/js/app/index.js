@@ -11,6 +11,7 @@ const mainApp = new Vue({
         showAddButton: false
     },
     methods: {
+        // Adding names to the list
         addName: function () {
             if (this.nameToAdd.lenght <= 2) {
                 return;
@@ -21,6 +22,7 @@ const mainApp = new Vue({
         }
     },
     computed: {
+        // Filtering elements on nameList
         filtredName: function () {
             if (this.nameSearch == '') {
                 return this.nameList;
@@ -35,6 +37,7 @@ const mainApp = new Vue({
         }
     },
     watch: {
+        // Verifiy name and showing button to add
         nameToAdd: function () {
             if (this.nameToAdd.length < 3) {
                 this.showAddButton = false;
